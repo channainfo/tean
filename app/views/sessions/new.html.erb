@@ -1,0 +1,25 @@
+<% content_for(:title) { "Login" } %>
+
+<div>
+  <% if current_user %>
+   Hi, <%= current_user.short_name%> <%= link_to "Logout", logout_path, method: 'delete', title: 'Logout' %>
+  <% end %>
+</div>
+
+<br/>
+
+<%= form_tag sessions_path, role: 'form', class: 'form-signin' do %>
+  <div class='div-row'>
+    <%= link_to "Sign in with Facebook ", "/auth/facebook", id: 'fb_login', class: 'btn btn-lg btn-primary btn-block' %>
+  </div >  
+  <br />
+
+  <div class='div-row'>
+    <%= email_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email address' %>
+    <%= password_field_tag :password, '', class: 'form-control', placeholder: 'Password' %>
+  </div>
+  <div class='div-row' style='text-align:right  ;'>
+    <%= button_tag "Login", class: 'btn btn-lg btn-success' %>
+  </div>
+  
+<% end %>

@@ -1,0 +1,10 @@
+<div class="panel-white" style='text-align:right;'>
+  <div >
+    <% if current_user %>
+
+      Hi, <%= current_user.email%> <%= link_to "Logout", logout_path, method: 'delete' %>
+    <% else %>
+       <a href='<%= login_path()%>' class='pt_auth_link' > Login </a>
+    <% end %>
+  </div>
+</div>
