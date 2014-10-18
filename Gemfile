@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
@@ -46,6 +46,15 @@ gem 'angular-rails-templates'
 gem 'rails-timeago', '~> 2.0'
 gem 'foundation-rails'
 
+
+group :production do
+  gem 'rails_12factor' #heroku asset serving and logging
+end
+
+group :development, :production do
+  gem 'mina'
+end
+
 group :development do
   gem 'capistrano-rails'
 end
@@ -53,13 +62,14 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rspec_api_documentation'
+  gem 'apitome'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'oauth2'
-
 end
 
 

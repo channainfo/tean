@@ -1,5 +1,5 @@
 module Api::V1
-  class BaseController < ::ApplicationController
+  class BaseController < ActionController::Base
     doorkeeper_for :all
     respond_to :json
   end

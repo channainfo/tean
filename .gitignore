@@ -1,24 +1,22 @@
 # Ignore bundler config.
-/.bundle
+.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+db/*.sqlite3
+db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
-/public/uploads
+log/*.log
+tmp/
+public/uploads
 
 .ruby-gemset
 .gems
 
 config/database.yml
+config/application.yml
 
-# Ignore application configuration
-/config/application.yml
+doc/api
+coverage
 
-/doc/api
-/coverage
-
-/public/assets
+public/assets

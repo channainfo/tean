@@ -40,3 +40,17 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+#apitome /api/docs
+RspecApiDocumentation.configure do |config|
+  config.format = :json
+end
+
+RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+  config.include ApiAuthenticationHelper
+
+  config.before(:each) do
+    header "Authorization", header_token
+  end
+end
