@@ -10,10 +10,12 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create]
   resources :posts
+  resources :registrations, only: [:create]
 
   namespace :api do
     namespace :v1 do
       resources :posts
+      resources :registrations, only: [:create]
 
     end
   end

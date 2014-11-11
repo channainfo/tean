@@ -49,8 +49,4 @@ end
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include ApiAuthenticationHelper
-
-  config.before(:each) do
-    header "Authorization", header_token
-  end
 end
